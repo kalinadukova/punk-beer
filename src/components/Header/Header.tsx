@@ -19,9 +19,7 @@ const Header: React.FC = () => {
           <Link to="/favourites">Favourites</Link>
         </li>
         <li className="navigation__element">
-          <Link to="/random-beer" onClick={randomBeerGenerator}>
-            Random beer
-          </Link>
+          <Link to="/random-beer">Random beer</Link>
         </li>
       </ul>
     </nav>

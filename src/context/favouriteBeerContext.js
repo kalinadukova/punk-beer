@@ -6,7 +6,11 @@ export const FavouriteBeerProvider = ({ children }) => {
   const [favouriteBeers, setFavouriteBeers] = useState([]);
 
   function addBeerToFavouriteList(item) {
-    const tempFavouriteList = [...favouriteBeers];
+    const localFavouriteBeers = JSON.parse(
+      localStorage.getItem('favouriteBeers')
+    );
+
+    const tempFavouriteList = [...localFavouriteBeers];
     tempFavouriteList.push(item);
 
     setFavouriteBeers([...tempFavouriteList]);
