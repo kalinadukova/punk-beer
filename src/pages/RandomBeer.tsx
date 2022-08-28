@@ -9,10 +9,6 @@ import { RandomBeerContext } from '../context/randomBeerContext';
 const RandomBeer: React.FC = () => {
   const { randomBeer, randomBeerGenerator } = useContext(RandomBeerContext);
 
-  // console.log('wrtf');
-
-  // console.log(randomBeer);
-
   // useEffect(() => {
   //   randomBeerGenerator();
   // }, []);

@@ -37,8 +37,13 @@ const Favourites = () => {
   }
 
   useEffect(() => {
-    setFavouriteBeers(favouriteBeers);
-    setFilteredBeers(favouriteBeers);
+    const localFavouriteBeers: Beer[] = JSON.parse(
+      localStorage.getItem('favouriteBeers') || ''
+    );
+    console.log(localFavouriteBeers);
+
+    setFavouriteBeers(localFavouriteBeers);
+    setFilteredBeers(localFavouriteBeers);
   }, []);
 
   return (

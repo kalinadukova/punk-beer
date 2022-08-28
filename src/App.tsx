@@ -1,5 +1,5 @@
 import Header from './components/Header/Header';
-import Home, { Beer } from './pages/Home';
+import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import RandomBeer from './pages/RandomBeer';
 import NotFound from './pages/NotFound';

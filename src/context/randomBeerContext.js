@@ -12,6 +12,7 @@ export const RandomBeerProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        // localStorage.setItem('randomBeer', JSON.stringify(data));
         setRandomBeer(data);
       });
   }

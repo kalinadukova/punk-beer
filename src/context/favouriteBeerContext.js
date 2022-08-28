@@ -10,6 +10,8 @@ export const FavouriteBeerProvider = ({ children }) => {
     tempFavouriteList.push(item);
 
     setFavouriteBeers([...tempFavouriteList]);
+
+    localStorage.setItem('favouriteBeers', JSON.stringify(tempFavouriteList));
   }
 
   function removeBeerFromFavoriteList(item) {
@@ -26,6 +28,7 @@ export const FavouriteBeerProvider = ({ children }) => {
     }
 
     setFavouriteBeers(tempFavouriteList);
+    localStorage.setItem('favouriteBeers', JSON.stringify(tempFavouriteList));
   }
 
   return (
