@@ -1,4 +1,5 @@
-import { createContext, useState, useMemo, useCallback } from 'react';
+import { createContext, useState } from 'react';
+
 import { Beer } from '../pages/Home';
 
 interface RandomBeerProviderProps {

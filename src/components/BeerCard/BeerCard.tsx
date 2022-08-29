@@ -3,7 +3,6 @@ import { useEffect, useState, useContext } from 'react';
 import { Beer } from '../../pages/Home';
 
 import audio from '../../assests/beer_sound.wav';
-
 import './BeerCard.css';
 
 interface BeerCardProps {

@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, ChangeEvent, useContext } from 'react';
 
 import SearchBar from '../components/SearchBar/SearchBar';
 import BeerList from '../components/BeerList/BeerList';
-
-import { ChangeEvent, useContext } from 'react';
+import { FavouriteBeerContext } from '../context/favouriteBeerContext';
 
 import { Beer } from './Home';
-
-import { FavouriteBeerContext } from '../context/favouriteBeerContext';
 
 const Favourites = () => {
   const [filteredBeers, setFilteredBeers] = useState<Beer[]>([]);

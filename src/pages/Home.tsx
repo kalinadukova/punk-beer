@@ -1,7 +1,7 @@
+import { ChangeEvent, useState, useEffect } from 'react';
+
 import SearchBar from '../components/SearchBar/SearchBar';
 import BeerList from '../components/BeerList/BeerList';
-
-import { ChangeEvent, useState, useEffect } from 'react';
 
 export interface Beer {
   id: number;

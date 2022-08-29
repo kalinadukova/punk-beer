@@ -1,11 +1,7 @@
 import BeerList from '../components/BeerList/BeerList';
-
-import { Beer } from '../pages/Home';
+import { RandomBeerContext } from '../context/randomBeerContext';
 
 import { useContext, useEffect } from 'react';
-
-import { RandomBeerContext } from '../context/randomBeerContext';
-import BeerCard from '../components/BeerCard/BeerCard';
 
 const RandomBeer: React.FC = () => {
   const { randomBeer, randomBeerGenerator } = useContext(RandomBeerContext);

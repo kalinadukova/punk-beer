@@ -1,9 +1,9 @@
-import './Header.css';
-
 import { Link } from 'react-router-dom';
-
 import { useContext } from 'react';
+
 import { RandomBeerContext } from '../../context/randomBeerContext';
+
+import './Header.css';
 
 const Header: React.FC = () => {
   const { randomBeerGenerator } = useContext(RandomBeerContext);

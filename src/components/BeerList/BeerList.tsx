@@ -1,10 +1,9 @@
+import { useContext } from 'react';
+
 import { Beer } from '../../pages/Home';
 
 import BeerCard from '../BeerCard/BeerCard';
-
 import { FavouriteBeerContext } from '../../context/favouriteBeerContext';
-
-import { useContext } from 'react';
 
 import './BeerList.css';
 
