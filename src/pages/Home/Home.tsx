@@ -1,16 +1,21 @@
-import { ChangeEvent, useState, useEffect } from 'react';
+import { ChangeEvent, useState, useEffect, useContext } from 'react';
 
 import { Beer } from '../../components/BeerCard/BeerInterface';
 
 import SearchBar from '../../components/SearchBar/SearchBar';
 import BeerList from '../../components/BeerList/BeerList';
 
+import { WalletContext } from '../../context/walletContext';
+
 const Home = () => {
   const [input, setInput] = useState<string>('');
   const [beers, setBeers] = useState<Beer[]>([]);
 
+  const { isDetected, connectWallet } = useContext(WalletContext);
+
   useEffect(() => {
     getBeers();
+    connectWallet();
   }, []);
 
   async function getBeers() {
@@ -38,6 +43,13 @@ const Home = () => {
 
   return (
     <>
+      {isDetected ? (
+        ''
+      ) : (
+        <h2 style={{ textAlign: 'center', color: '#00d1b2' }}>
+          MetaMask is not detected
+        </h2>
+      )}
       <SearchBar onChangeHandler={onSearchChange} onClickHandler={findBeers} />
       <BeerList beersArray={beers} />
     </>

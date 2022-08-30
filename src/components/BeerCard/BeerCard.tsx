@@ -1,5 +1,8 @@
 import { Beer } from './BeerInterface';
 
+import { useContext } from 'react';
+import { WalletContext } from '../../context/walletContext';
+
 import audio from '../../assests/beer_sound.wav';
 import './BeerCard.css';
 
@@ -15,6 +18,8 @@ const BeerCard: React.FC<BeerCardProps> = ({
   removeBeerFromFavoriteList,
 }) => {
   const beerSound = new Audio(audio);
+
+  const { walletAddress } = useContext(WalletContext);
 
   function addItem() {
     const item = {
@@ -43,11 +48,12 @@ const BeerCard: React.FC<BeerCardProps> = ({
 
   return (
     <div className="beer-card__container">
-      {localStorage.getItem(beer.name) ? (
-        <i className="fa-solid fa-heart icon" onClick={removeItem}></i>
-      ) : (
-        <i className="fa-regular fa-heart icon" onClick={addItem}></i>
-      )}
+      {walletAddress &&
+        (localStorage.getItem(beer.name) ? (
+          <i className="fa-solid fa-heart icon" onClick={removeItem}></i>
+        ) : (
+          <i className="fa-regular fa-heart icon" onClick={addItem}></i>
+        ))}
 
       <img
         className="beer-card__img"

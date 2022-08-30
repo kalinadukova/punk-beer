@@ -6,6 +6,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 import { FavouriteBeerProvider } from './context/favouriteBeerContext';
+import { WalletProvider } from './context/walletContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,9 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
-    <FavouriteBeerProvider>
-      <App />
-    </FavouriteBeerProvider>
+    <WalletProvider>
+      <FavouriteBeerProvider>
+        <App />
+      </FavouriteBeerProvider>
+    </WalletProvider>
   </BrowserRouter>
   // </React.StrictMode>
 );

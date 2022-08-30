@@ -3,6 +3,7 @@ import { useEffect, useState, ChangeEvent, useContext } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import BeerList from '../../components/BeerList/BeerList';
 import { FavouriteBeerContext } from '../../context/favouriteBeerContext';
+import { WalletContext } from '../../context/walletContext';
 
 import { Beer } from '../../components/BeerCard/BeerInterface';
 
@@ -12,6 +13,7 @@ const Favourites = () => {
 
   const { favouriteBeers, setFavouriteBeers } =
     useContext(FavouriteBeerContext);
+  const { isDetected } = useContext(WalletContext);
 
   function onSearchChange(e: ChangeEvent<HTMLInputElement>) {
     setInput(e.target.value);
@@ -34,13 +36,19 @@ const Favourites = () => {
   }
 
   useEffect(() => {
+    if (localStorage.getItem('favouriteBeers') === null) {
+      console.log(typeof localStorage.getItem('favouriteBeers'));
+
+      localStorage.setItem('favouriteBeers', JSON.stringify([]));
+    }
+
     const localFavouriteBeers: Beer[] = JSON.parse(
       localStorage.getItem('favouriteBeers') || ''
     );
 
     setFavouriteBeers(localFavouriteBeers);
     setFilteredBeers(localFavouriteBeers);
-  }, [favouriteBeers]);
+  }, []);
 
   return (
     <>
