@@ -1,6 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
-
-import { Beer } from '../../pages/Home';
+import { Beer } from './BeerInterface';
 
 import audio from '../../assests/beer_sound.wav';
 import './BeerCard.css';
@@ -17,8 +15,6 @@ const BeerCard: React.FC<BeerCardProps> = ({
   removeBeerFromFavoriteList,
 }) => {
   const beerSound = new Audio(audio);
-
-  useEffect(() => {}, []);
 
   function addItem() {
     const item = {

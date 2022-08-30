@@ -1,14 +1,9 @@
 import { ChangeEvent, useState, useEffect } from 'react';
 
-import SearchBar from '../components/SearchBar/SearchBar';
-import BeerList from '../components/BeerList/BeerList';
+import { Beer } from '../../components/BeerCard/BeerInterface';
 
-export interface Beer {
-  id: number;
-  name: string;
-  description: string;
-  image_url: string;
-}
+import SearchBar from '../../components/SearchBar/SearchBar';
+import BeerList from '../../components/BeerList/BeerList';
 
 const Home = () => {
   const [input, setInput] = useState<string>('');

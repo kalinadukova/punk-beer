@@ -1,0 +1,15 @@
+.random-beer-btn__container {
+  margin: 40px;
+  text-align: center;
+}
+
+.random-beer-btn {
+  display: inline-block;
+  color: #00d1b2;
+  background-color: #fff;
+  border: 1px solid #00d1b2;
+  padding: 20px 40px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}

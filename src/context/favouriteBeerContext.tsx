@@ -1,17 +1,11 @@
-import React, { createContext, useState, ReactNode } from 'react';
+import { createContext, useState } from 'react';
 
-import { Beer } from '../pages/Home';
+import { Beer } from '../components/BeerCard/BeerInterface';
 
-interface FavouriteBeerProviderProps {
-  children: React.ReactNode;
-}
-
-interface FavouriteBeerContextProps {
-  favouriteBeers: Beer[];
-  setFavouriteBeers: (favouriteBeers: Beer[]) => void;
-  addBeerToFavouriteList: (item: Beer) => void;
-  removeBeerFromFavoriteList: (item: Beer) => void;
-}
+import {
+  FavouriteBeerContextProps,
+  FavouriteBeerProviderProps,
+} from './beerContextInterfaces';
 
 const defaultBeer = {
   favouriteBeers: [],
@@ -29,7 +23,7 @@ export const FavouriteBeerProvider: React.FC<FavouriteBeerProviderProps> = ({
   const [favouriteBeers, setFavouriteBeers] = useState<Beer[]>([]);
 
   function addBeerToFavouriteList(item: Beer) {
-    const localFavouriteBeers = JSON.parse(
+    const localFavouriteBeers: Beer[] = JSON.parse(
       localStorage.getItem('favouriteBeers') || ''
     );
 

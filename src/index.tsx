@@ -6,21 +6,18 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 import { FavouriteBeerProvider } from './context/favouriteBeerContext';
-import { RandomBeerProvider } from './context/randomBeerContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <FavouriteBeerProvider>
-        <RandomBeerProvider>
-          <App />
-        </RandomBeerProvider>
-      </FavouriteBeerProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
+    <FavouriteBeerProvider>
+      <App />
+    </FavouriteBeerProvider>
+  </BrowserRouter>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

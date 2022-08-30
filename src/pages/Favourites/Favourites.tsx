@@ -1,10 +1,10 @@
 import { useEffect, useState, ChangeEvent, useContext } from 'react';
 
-import SearchBar from '../components/SearchBar/SearchBar';
-import BeerList from '../components/BeerList/BeerList';
-import { FavouriteBeerContext } from '../context/favouriteBeerContext';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import BeerList from '../../components/BeerList/BeerList';
+import { FavouriteBeerContext } from '../../context/favouriteBeerContext';
 
-import { Beer } from './Home';
+import { Beer } from '../../components/BeerCard/BeerInterface';
 
 const Favourites = () => {
   const [filteredBeers, setFilteredBeers] = useState<Beer[]>([]);
@@ -40,11 +40,11 @@ const Favourites = () => {
 
     setFavouriteBeers(localFavouriteBeers);
     setFilteredBeers(localFavouriteBeers);
-  }, []);
+  }, [favouriteBeers]);
 
   return (
     <>
-      <h1 style={{ textAlign: 'center', color: '#00d1b2' }}>Favourites</h1>
+      <h1 style={{ textAlign: 'center', color: '#00d1b2' }}>Favourite beers</h1>
       <SearchBar
         onChangeHandler={onSearchChange}
         onClickHandler={findFavoriteBeers}
