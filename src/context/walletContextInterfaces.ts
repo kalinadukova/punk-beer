@@ -7,5 +7,7 @@ export interface WalletContextProviderProps {
 export interface WalletContextProps {
   isDetected: boolean;
   walletAddress: string;
+  setWalletAddress: (walletAddress: string) => void;
   connectWallet: () => void;
+  checkLocalStorage: () => void;
 }
