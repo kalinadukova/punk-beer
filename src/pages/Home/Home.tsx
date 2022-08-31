@@ -46,9 +46,7 @@ const Home = () => {
       {isDetected ? (
         ''
       ) : (
-        <h2 style={{ textAlign: 'center', color: '#00d1b2' }}>
-          MetaMask is not detected
-        </h2>
+        <h2 className="headers-style">MetaMask is not detected</h2>
       )}
       <SearchBar onChangeHandler={onSearchChange} onClickHandler={findBeers} />
       <BeerList beersArray={beers} />

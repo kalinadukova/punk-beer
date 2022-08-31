@@ -1,9 +1,5 @@
 const NotFound = () => {
-  return (
-    <h1 style={{ textAlign: 'center', color: '#00d1b2' }}>
-      404 Page not found
-    </h1>
-  );
+  return <h2 className="headers-style">404 Page not found</h2>;
 };
 
 export default NotFound;

@@ -3,9 +3,10 @@ import { useEffect, useState, ChangeEvent, useContext } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import BeerList from '../../components/BeerList/BeerList';
 import { FavouriteBeerContext } from '../../context/favouriteBeerContext';
-import { WalletContext } from '../../context/walletContext';
 
 import { Beer } from '../../components/BeerCard/BeerInterface';
+
+import './Favourites.css';
 
 const Favourites = () => {
   const [filteredBeers, setFilteredBeers] = useState<Beer[]>([]);
@@ -13,7 +14,6 @@ const Favourites = () => {
 
   const { favouriteBeers, setFavouriteBeers } =
     useContext(FavouriteBeerContext);
-  const { isDetected } = useContext(WalletContext);
 
   function onSearchChange(e: ChangeEvent<HTMLInputElement>) {
     setInput(e.target.value);
@@ -52,7 +52,7 @@ const Favourites = () => {
 
   return (
     <>
-      <h1 style={{ textAlign: 'center', color: '#00d1b2' }}>Favourite beers</h1>
+      <h1 className="headers-style">Favourite beers</h1>
       <SearchBar
         onChangeHandler={onSearchChange}
         onClickHandler={findFavoriteBeers}
@@ -61,9 +61,7 @@ const Favourites = () => {
       {favouriteBeers.length > 0 ? (
         <BeerList beersArray={filteredBeers} />
       ) : (
-        <h2 style={{ textAlign: 'center', color: '#00d1b2' }}>
-          No beers in favourites
-        </h2>
+        <h2 className="headers-style">No beers in favourites</h2>
       )}
     </>
   );
