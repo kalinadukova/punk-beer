@@ -12,12 +12,3 @@ export interface FavouriteBeerContextProps {
   addBeerToFavouriteList: (item: Beer) => void;
   removeBeerFromFavoriteList: (item: Beer) => void;
 }
-
-export interface RandomBeerProviderProps {
-  children: ReactNode;
-}
-
-export interface RandomBeerContextProps {
-  randomBeer: Beer[];
-  randomBeerGenerator: () => void;
-}

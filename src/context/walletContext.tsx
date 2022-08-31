@@ -26,6 +26,7 @@ export const WalletProvider: React.FC<WalletContextProviderProps> = ({
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const result = await provider.send('eth_requestAccounts', []);
+
       setWalletAddress(result[0]);
     }
   }
