@@ -1,6 +1,6 @@
 import { Beer } from './BeerInterface';
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { WalletContext } from '../../context/walletContext';
 
 import audio from '../../assests/beer_sound.wav';
@@ -19,7 +19,11 @@ const BeerCard: React.FC<BeerCardProps> = ({
 }) => {
   const beerSound = new Audio(audio);
 
-  const { walletAddress } = useContext(WalletContext);
+  const { walletAddress, checkLocalStorage } = useContext(WalletContext);
+
+  useEffect(() => {
+    checkLocalStorage();
+  }, []);
 
   function addItem() {
     const item = {
